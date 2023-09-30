@@ -10,7 +10,7 @@ dependencies:
     version: 8.1.0
   '@next-auth/prisma-adapter':
     specifier: ^1.0.7
-    version: 1.0.7(@prisma/client@5.3.1)(next-auth@4.23.1)
+    version: 1.0.7(@prisma/client@5.3.1)(next-auth@4.21.1)
   '@prisma/client':
     specifier: ^5.2.0
     version: 5.3.1(prisma@5.3.1)
@@ -32,6 +32,9 @@ dependencies:
   nanoid:
     specifier: ^5.0.0
     version: 5.0.1
+  next-auth:
+    specifier: 4.21.1
+    version: 4.21.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
   notivue:
     specifier: ^1.4.0
     version: 1.4.0
@@ -60,7 +63,7 @@ devDependencies:
     version: 0.8.5(nuxt@3.7.4)(vite@4.4.9)
   '@sidebase/nuxt-auth':
     specifier: 0.5.0
-    version: 0.5.0(next-auth@4.23.1)
+    version: 0.5.0(next-auth@4.21.1)
   '@unocss/eslint-config':
     specifier: ^0.56.4
     version: 0.56.4(eslint@8.50.0)(typescript@5.2.2)
@@ -1552,14 +1555,14 @@ packages:
       urlpattern-polyfill: 8.0.2
     dev: true
 
-  /@next-auth/prisma-adapter@1.0.7(@prisma/client@5.3.1)(next-auth@4.23.1):
+  /@next-auth/prisma-adapter@1.0.7(@prisma/client@5.3.1)(next-auth@4.21.1):
     resolution: {integrity: sha512-Cdko4KfcmKjsyHFrWwZ//lfLUbcLqlyFqjd/nYE2m3aZ7tjMNUjpks47iw7NTCnXf+5UWz5Ypyt1dSs1EP5QJw==}
     peerDependencies:
       '@prisma/client': '>=2.26.0 || >=3'
       next-auth: ^4
     dependencies:
       '@prisma/client': 5.3.1(prisma@5.3.1)
-      next-auth: 4.23.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
+      next-auth: 4.21.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
     dev: false
 
   /@next/env@13.5.3:
@@ -2473,14 +2476,14 @@ packages:
       rollup: 3.29.4
     dev: true
 
-  /@sidebase/nuxt-auth@0.5.0(next-auth@4.23.1):
+  /@sidebase/nuxt-auth@0.5.0(next-auth@4.21.1):
     resolution: {integrity: sha512-Zq0laKbRjX3luAJrkSTYE9gkLttFO5LiWB9qq5xiYQGmtKxY9cu8sk9KeUVZ3z6shjEqHdtwM5FFCKGGvwVALA==}
     peerDependencies:
       next-auth: ^4.21.1
     dependencies:
       '@nuxt/kit': 3.7.4
       defu: 6.1.2
-      next-auth: 4.23.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
+      next-auth: 4.21.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0)
       nitropack: 2.6.3
       requrl: 3.0.2
       ufo: 1.3.1
@@ -7917,8 +7920,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /next-auth@4.23.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-mL083z8KgRtlrIV6CDca2H1kduWJuK/3pTS0Fe2og15KOm4v2kkLGdSDfc2g+019aEBrJUT0pPW2Xx42ImN1WA==}
+  /next-auth@4.21.1(next@13.5.3)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-NYkU4jAPSVxWhCblE8dDFAnKM7kOoO/QEobQ0RoEVP9Wox99A3PKHwOAsWhSg8ahJG/iKIWk2Bo1xHvsS4R39Q==}
     peerDependencies:
       next: ^12.2.5 || ^13
       nodemailer: ^6.6.5
