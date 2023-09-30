@@ -1,3 +1,5 @@
+import { env } from 'std-env'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -19,7 +21,7 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@vueuse/nuxt', '@unocss/nuxt'],
+  modules: ['@vueuse/nuxt', '@unocss/nuxt', '@sidebase/nuxt-auth'],
   css: [
     '@unocss/reset/tailwind.css',
     'notivue/notifications.css',
@@ -39,5 +41,12 @@ export default defineNuxtConfig({
         from: 'consola',
       },
     ],
+  },
+  runtimeConfig: {
+    auth: {
+      SECRET: env.SECRET,
+      GITHUB_CLIENT_ID: env.GITHUB_CLIENT_ID,
+      GITHUB_CLIENT_SECRET: env.GITHUB_CLIENT_SECRET,
+    },
   },
 })
