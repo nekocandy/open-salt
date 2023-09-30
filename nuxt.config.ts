@@ -25,6 +25,9 @@ export default defineNuxtConfig({
     'notivue/notifications.css',
     'notivue/animations.css',
   ],
+  build: {
+    transpile: ['trpc-nuxt'],
+  },
   imports: {
     imports: [
       {
