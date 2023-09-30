@@ -1,0 +1,11 @@
+generator kysely {
+  provider     = "prisma-kysely"
+  output       = "../lib/database"
+  fileName     = "types.ts"
+  enumFileName = "enums.ts"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
