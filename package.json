@@ -31,10 +31,14 @@
     "node": "18.17.1"
   },
   "dependencies": {
+    "@trpc/client": "^10.38.5",
+    "@trpc/server": "^10.38.5",
     "consola": "^3.2.3",
     "dayjs": "^1.11.10",
     "kysely": "^0.26.3",
     "nanoid": "^5.0.0",
-    "notivue": "^1.4.0"
+    "notivue": "^1.4.0",
+    "trpc-nuxt": "^0.10.12",
+    "zod": "^3.22.2"
   }
 }
