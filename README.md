@@ -1,6 +1,7 @@
+<img alt="banner" src="https://cdn.discordapp.com/attachments/1156616032086130769/1158025306330898582/meme.png" />
+
 <h1 align="center">Welcome to Open Salt 👋</h1>
 <p align="center">
-
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge" />   <img src="https://img.shields.io/github/license/nekocandy/open-salt?style=for-the-badge" alt="shields">  <img src="https://img.shields.io/github/directory-file-count/nekocandy/open-salt?style=for-the-badge" alt="shields"></p>
 
 > The basic condiment for your open source repos
