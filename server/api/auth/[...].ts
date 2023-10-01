@@ -11,6 +11,7 @@ export default NuxtAuthHandler({
     signIn: '/login',
   },
   callbacks: {
+    // @ts-expect-error no typings
     session: async ({ session, user }) => {
       const newSession = {
         ...session,
