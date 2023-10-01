@@ -11,12 +11,16 @@
       Website
     </a>
     <span> | </span>
-    <a href="https://github.com/choojs/choo/blob/master/.github/CONTRIBUTING.md">
+    <a href="https://github.com/nekocandy/open-salt/blob/main/.github/CONTRIBUTING.md">
       Contributing
     </a>
     <span> | </span>
-    <a href="https://github.com/choojs/choo/blob/master/.github/CODE_OF_CONDUCT.md">
+    <a href="https://github.com/nekocandy/open-salt/blob/main/.github/CODE_OF_CONDUCT.md">
       Code of Conduct
+    </a>
+     <span> | </span>
+    <a href="https://github.com/nekocandy/open-salt/blob/main/.github/DEV_ENVIRONMENT.md">
+      Developer Environment
     </a>
   </h3>
 </div>
