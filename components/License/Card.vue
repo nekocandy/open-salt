@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div flex flex-col gap-4 rounded-md bg-yellow-200 px-4 py-4>
+  <NuxtLink :to="`/license/info/${licenseData['spdx-id']}`" flex flex-col gap-4 rounded-md bg-yellow-200 px-4 py-4>
     <h1>{{ licenseData.title }}</h1>
 
     <p text-xs>
@@ -15,7 +15,7 @@ defineProps<{
         licenseData.description
       }}
     </p>
-  </div>
+  </NuxtLink>
 </template>
 
 <style scoped>
