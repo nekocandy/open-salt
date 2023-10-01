@@ -1,20 +1,17 @@
 <script setup lang="ts">
-const { signIn, status, signOut } = useAuth()
+definePageMeta({
+  auth: false,
+})
+const { status } = useAuth()
 
-async function login() {
-  if (status.value === 'authenticated')
-    await signOut()
-
-  await signIn('github')
-}
+if (status.value === 'authenticated')
+  navigateTo('/dashboard')
+else
+  navigateTo('/login')
 </script>
 
 <template>
-  <div class="h-screen flex items-center justify-center bg-zinc-900 font-mono text-white">
-    <button @click="login">
-      Login with WitHub
-    </button>
-  </div>
+  <div />
 </template>
 
 <style scoped>

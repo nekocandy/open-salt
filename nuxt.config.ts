@@ -42,6 +42,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+  auth: {
+    enableGlobalAppMiddleware: true,
+  },
   runtimeConfig: {
     auth: {
       SECRET: env.SECRET,
