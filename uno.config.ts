@@ -22,15 +22,15 @@ export default defineConfig({
       fonts: {
         sans: {
           name: 'Inter',
-          weights: new Array(9).fill(0).map((_, i) => i * 100 + 100),
+          weights: Array.from({ length: 9 }).fill(0).map((_, i) => i * 100 + 100),
         },
         serif: {
           name: 'Open Sans',
-          weights: new Array(9).fill(0).map((_, i) => i * 100 + 100),
+          weights: Array.from({ length: 9 }).fill(0).map((_, i) => i * 100 + 100),
         },
         mono: {
           name: 'JetBrains Mono',
-          weights: new Array(9).fill(0).map((_, i) => i * 100 + 100),
+          weights: Array.from({ length: 9 }).fill(0).map((_, i) => i * 100 + 100),
         },
       },
     }),
