@@ -35,8 +35,11 @@ export const githubRouter = router({
       return data.filter(repo => repo.license == null)
     }),
 
-  getRepositoryWithoutCodeOfConduct: protectedProcedure
-    .query(async ({ ctx }) => {
+  getRepositoryWithoutFile: protectedProcedure
+    .input(z.object({
+      filePath: z.string(),
+    }))
+    .query(async ({ ctx, input }) => {
       const user = ctx.user.user
 
       const octokit = new Octokit({
@@ -48,25 +51,25 @@ export const githubRouter = router({
         type: 'owner',
       })
 
-      const fileTrees = data.filter(async (repo) => {
+      const fileTrees = await Promise.all(data.map(async (repo) => {
         try {
-          const { status } = await octokit.rest.repos.getContent({
+          const everything = await octokit.rest.repos.getContent({
             owner: user.username,
             repo: repo.name,
-            path: 'CODE_OF_CONDUCT.md',
+            path: input.filePath,
           })
 
-          if (status !== 200)
+          if (everything.status === 200)
             return false
 
-          return true
+          return repo
         }
         catch (error) {
-          return false
+          return repo
         }
-      })
+      }))
 
-      return fileTrees
+      return fileTrees.filter(tree => tree !== false)
     }),
 
   addFile: protectedProcedure

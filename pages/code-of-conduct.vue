@@ -2,7 +2,9 @@
 import CodeOfConduct from '~/assets/CoC.txt'
 
 const { $client } = useNuxtApp()
-const repositoriesWithoutCodeOfConduct = $client.githubRouter.getRepositoryWithoutCodeOfConduct.useLazyQuery()
+const repositoriesWithoutCodeOfConduct = $client.githubRouter.getRepositoryWithoutFile.useLazyQuery({
+  filePath: 'CODE_OF_CONDUCT.md',
+})
 
 onMounted(() => {
   repositoriesWithoutCodeOfConduct.refresh()
@@ -56,7 +58,10 @@ async function addCoC(repositoryName: string) {
       <div v-if="repositoriesWithoutCodeOfConduct.status.value === 'success' " grid grid-cols-4 gap-4>
         <button v-for="repo in repositoriesWithoutCodeOfConduct.data.value" :key="repo.id" flex items-center gap-3 rounded-md bg-white px-4 py-4 @click="addCoC(repo.name)">
           <div i-iconoir-repository />
-          {{ repo.full_name }}
+
+          {{
+            repo.name
+          }}
 
           <div i-tabler-plus />
         </button>
