@@ -3,8 +3,11 @@ import LicenseData from '~/assets/license.json'
 import type { ILicenseData } from '~/lib/types/License'
 
 const clipboard = useClipboard()
+const { $client } = useNuxtApp()
 const route = useRoute()
 const license = route.params.license
+
+const repositoriesWithoutLicense = await $client.githubRouter.getRepositoryWithoutLicense.query()
 
 const data = LicenseData.filter(
 // @ts-expect-error - I don't know why this is happening
@@ -17,7 +20,7 @@ async function copyToClipboard() {
 </script>
 
 <template>
-  <div grid grid-cols-12 w-full gap-4>
+  <div grid grid-cols-12 w-full gap-4 pr-6>
     <div col-span-8 w-full flex flex-col gap-4>
       <div flex flex-col gap-1>
         <h1 text-4xl font-black uppercase>
@@ -78,7 +81,7 @@ async function copyToClipboard() {
       </div>
     </div>
 
-    <div col-span-3 w-full flex flex-col gap-4>
+    <div col-span-4 w-full flex flex-col gap-4>
       <button flex items-center justify-center gap-2 rounded-md bg-blue px-4 py-2 text-nowrap text-black @click="copyToClipboard">
         <div i-mi-copy h-6 w-6 />
         Copy License to Clipboard
@@ -97,6 +100,21 @@ async function copyToClipboard() {
       </div>
 
       <div border-b-2 border-stone-400 />
+
+      <div v-if="repositoriesWithoutLicense.length" flex flex-col gap-2>
+        <div flex flex-col gap-1 pb-2>
+          <h1 text-xl font-bold uppercase>
+            Repositories Without License:
+          </h1>
+
+          <span text-sm>
+            click here to add license directly to repository
+          </span>
+        </div>
+        <div v-for="repository of repositoriesWithoutLicense" :key="repository.id">
+          <LicenseRepositoryAddCard :repository="repository" :license-data="data" />
+        </div>
+      </div>
 
       <div border-b-2 border-stone-400 />
     </div>
