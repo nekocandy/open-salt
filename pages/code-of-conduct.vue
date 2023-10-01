@@ -20,6 +20,9 @@ async function addCoC(repositoryName: string) {
 
   if (mutationData)
     repositoriesWithoutCodeOfConduct.refresh()
+
+  // eslint-disable-next-line no-alert
+  alert(`added code of conduct to ${repositoryName}`)
 }
 </script>
 
