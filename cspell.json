@@ -8,9 +8,11 @@
         "commitlint",
         "consola",
         "kysely",
+        "Nekocandy",
         "notivue",
         "nuxt",
         "sidebase",
+        "tdesign",
         "TRPC",
         "unocss",
         "vueuse"
