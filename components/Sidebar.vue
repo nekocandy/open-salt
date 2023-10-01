@@ -33,8 +33,11 @@ const PATHS: IPath[] = [
 
 <template>
   <div h-full flex flex-col items-center justify-between border-r-2 border-yellow-900 px-10 py-4 font-mono>
-    <NuxtLink to="/dashboard">
-      better OpenSauce
+    <NuxtLink to="/dashboard" w-full flex flex-col justify-center gap-4 text-center>
+      <div flex items-center justify-center rounded-md bg-yellow-200 py-12>
+        <div i-game-icons-salt-shaker h-12 w-12 text-orange />
+      </div>
+      <span text-2xl font-black uppercase text-orange>Open Salt</span>
     </NuxtLink>
 
     <div flex flex-col items-center justify-center gap-4>
