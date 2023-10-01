@@ -39,7 +39,7 @@ model User {
   name            String?
   email           String?   @unique
   username        String
-  bio             String
+  bio             String?
   publicRepoCount Int
   token           String
   emailVerified   DateTime?
