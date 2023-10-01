@@ -16,9 +16,11 @@ async function addLicense() {
   if (!toContinue)
     return
 
-  await $client.githubRouter.addLicense.mutate({
+  await $client.githubRouter.addFile.mutate({
     repositoryName: props.repository.name,
-    license: props.licenseData.text,
+    contents: props.licenseData.text,
+    filePath: 'LICENSE',
+    message: 'docs: add license | added from website',
   })
 
   // eslint-disable-next-line no-alert

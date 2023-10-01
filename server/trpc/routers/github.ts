@@ -69,10 +69,12 @@ export const githubRouter = router({
       return fileTrees
     }),
 
-  addLicense: protectedProcedure
+  addFile: protectedProcedure
     .input(z.object({
       repositoryName: z.string(),
-      license: z.string(),
+      filePath: z.string(),
+      contents: z.string(),
+      message: z.string(),
     }))
     .mutation(async ({ ctx, input }) => {
       const user = ctx.user.user
@@ -84,10 +86,10 @@ export const githubRouter = router({
       await octokit.rest.repos.createOrUpdateFileContents({
         owner: user.username,
         repo: input.repositoryName,
-        path: 'LICENSE',
-        message: 'docs: add license | added from website',
+        path: input.filePath,
+        message: input.message,
         // eslint-disable-next-line n/prefer-global/buffer
-        content: Buffer.from(input.license).toString('base64'),
+        content: Buffer.from(input.contents).toString('base64'),
         author: {
           name: 'Nekocandy Bot',
           email: 'saucebot@nekocandy.club',
