@@ -49,7 +49,7 @@ body:
 - type: markdown
   attributes:
     value: |
-      Provide a clear & concise description of what the bug is. Please follow our guidance on [How To Create Good Issues](https://github.com/pnp/powerfx-samples/wiki/How-to-Create-Good-Issues) which explains how to apply formatting, adding references & resources, screenshots, etc. 
+      Provide a clear & concise description of what the bug is.
       
       **Do not attach ZIP files** of your code or compiled projects - instead, please publish your code to a public GitHub repo & post a link to it.
 
