@@ -1,5 +1,18 @@
 <script setup lang="ts">
 const { data } = useAuth()
+
+interface IPath {
+  name: string
+  path: string
+  icon?: string
+}
+
+const PATHS: IPath[] = [
+  {
+    name: 'License',
+    path: '/license',
+  },
+]
 </script>
 
 <template>
@@ -9,7 +22,9 @@ const { data } = useAuth()
     </div>
 
     <div>
-      j
+      <NuxtLink v-for="path in PATHS" :key="path.path" class="hover:underline" cursor-pointer text-lg font-bold uppercase>
+        {{ path.name }}
+      </NuxtLink>
     </div>
 
     <div flex items-center justify-center gap-2>
