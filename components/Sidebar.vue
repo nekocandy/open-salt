@@ -21,6 +21,10 @@ const PATHS: IPath[] = [
     path: '/readme',
   },
   {
+    name: 'Contributing',
+    path: '/contributing',
+  },
+  {
     name: 'Badges',
     path: '/badges',
   },
