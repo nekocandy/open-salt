@@ -60,6 +60,7 @@ async function addCoC(repositoryName: string) {
           <div i-iconoir-repository />
 
           {{
+            // @ts-expect-error typing issue
             repo.name
           }}
 
