@@ -95,5 +95,7 @@ export const githubRouter = router({
           email: 'saucebot@nekocandy.club',
         },
       })
+
+      return true
     }),
 })
