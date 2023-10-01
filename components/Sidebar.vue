@@ -12,6 +12,10 @@ const PATHS: IPath[] = [
     name: 'License',
     path: '/license',
   },
+  {
+    name: 'Code of Conduct',
+    path: '/code-of-conduct',
+  },
 ]
 </script>
 
@@ -21,8 +25,12 @@ const PATHS: IPath[] = [
       better OpenSauce
     </NuxtLink>
 
-    <div>
-      <NuxtLink v-for="path in PATHS" :key="path.path" :to="path.path" class="hover:underline" cursor-pointer text-lg font-bold uppercase>
+    <div flex flex-col items-center justify-center gap-4>
+      <NuxtLink
+        v-for="path in PATHS" :key="path.path" :to="path.path" class="hover:underline" cursor-pointer text-lg font-bold uppercase :class="{
+          'bg-yellow-300': $route.path.startsWith(path.path),
+        }"
+      >
         {{ path.name }}
       </NuxtLink>
     </div>
