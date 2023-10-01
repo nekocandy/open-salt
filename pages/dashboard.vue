@@ -15,7 +15,7 @@ const { data } = useAuth()
       <img w-full :src="`http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=${data?.user.username}&theme=calm&utcOffset=8`" alt="">
     </div>
 
-    <img :src="`https://github-readme-activity-graph.vercel.app/graph?username=${data.user.username}&theme=vue`" alt="">
+    <img :src="`https://github-readme-activity-graph.vercel.app/graph?username=${data?.user.username}&theme=vue`" alt="">
   </div>
 </template>
 
