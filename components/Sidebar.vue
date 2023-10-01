@@ -16,6 +16,14 @@ const PATHS: IPath[] = [
     name: 'Code of Conduct',
     path: '/code-of-conduct',
   },
+  {
+    name: 'Readme',
+    path: '/readme',
+  },
+  {
+    name: 'Badges',
+    path: '/badges',
+  },
 ]
 </script>
 
