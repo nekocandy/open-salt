@@ -48,37 +48,25 @@ export const githubRouter = router({
         type: 'owner',
       })
 
-      const fileTrees = await Promise.allSettled(
-        data.map(async (repo) => {
-          const { data } = await octokit.rest.git.getTree({
+      const fileTrees = data.filter(async (repo) => {
+        try {
+          const { status } = await octokit.rest.repos.getContent({
             owner: user.username,
             repo: repo.name,
-            tree_sha: 'HEAD',
-            recursive: 'true',
+            path: 'CODE_OF_CONDUCT.md',
           })
 
-          return data
-        }),
-      )
+          if (status !== 200)
+            return false
 
-      const locations = [
-        'CODE_OF_CONDUCT.md',
-        'docs/CODE_OF_CONDUCT.md',
-        '.github/CODE_OF_CONDUCT.md',
-      ]
-
-      const withoutCodeOfConduct = fileTrees.filter((fileTree) => {
-        if (fileTree.status === 'rejected')
+          return true
+        }
+        catch (error) {
           return false
-
-        return locations.every((location) => {
-          return !fileTree.value.tree.filter(file => file.path).some((file) => {
-            return file.path!.includes(location)
-          })
-        })
+        }
       })
 
-      return withoutCodeOfConduct
+      return fileTrees
     }),
 
   addLicense: protectedProcedure

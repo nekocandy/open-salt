@@ -1,5 +1,6 @@
 <script setup lang="ts">
-
+const { $client } = useNuxtApp()
+const repositoriesWithoutCodeOfConduct = await $client.githubRouter.getRepositoryWithoutCodeOfConduct.query()
 </script>
 
 <template>
@@ -16,6 +17,18 @@
       <span text-right>
         ~Ada Initiative
       </span>
+    </div>
+
+    <div flex flex-col gap-4>
+      <h1 text-2xl font-bold>
+        Repositories without Code of Conduct:
+      </h1>
+
+      <div grid grid-cols-4>
+        <div v-for="repo in repositoriesWithoutCodeOfConduct" :key="repo.id">
+          {{ repo.name }}
+        </div>
+      </div>
     </div>
   </div>
 </template>
