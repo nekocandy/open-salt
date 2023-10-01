@@ -17,9 +17,9 @@ const PATHS: IPath[] = [
 
 <template>
   <div h-full flex flex-col items-center justify-between border-r-2 border-yellow-900 px-10 py-4 font-mono>
-    <div>
+    <NuxtLink to="/dashboard">
       better OpenSauce
-    </div>
+    </NuxtLink>
 
     <div>
       <NuxtLink v-for="path in PATHS" :key="path.path" :to="path.path" class="hover:underline" cursor-pointer text-lg font-bold uppercase>
