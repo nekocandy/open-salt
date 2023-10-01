@@ -56,7 +56,15 @@ async function addCoC(repositoryName: string) {
       </div>
 
       <div v-if="repositoriesWithoutCodeOfConduct.status.value === 'success' " grid grid-cols-4 gap-4>
-        <button v-for="repo in repositoriesWithoutCodeOfConduct.data.value" :key="repo.id" flex items-center gap-3 rounded-md bg-white px-4 py-4 @click="addCoC(repo.name)">
+        <button
+          v-for="repo in repositoriesWithoutCodeOfConduct.data.value" :key="
+            // @ts-expect-error typing issue
+            repo.id
+          " flex items-center gap-3 rounded-md bg-white px-4 py-4 @click="
+            // @ts-expect-error typing issue
+            addCoC(repo.name)
+          "
+        >
           <div i-iconoir-repository />
 
           {{
