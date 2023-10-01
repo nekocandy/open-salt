@@ -10,6 +10,18 @@ export default NuxtAuthHandler({
   pages: {
     signIn: '/login',
   },
+  callbacks: {
+    session: async ({ session, user }) => {
+      const newSession = {
+        ...session,
+        user: {
+          ...session.user,
+          ...user,
+        },
+      }
+      return Promise.resolve(newSession)
+    },
+  },
   providers: [
     // @ts-expect-error vite SSR issue - need to use .default
     GithubProvider.default({
@@ -21,7 +33,7 @@ export default NuxtAuthHandler({
       },
       userinfo: {
         url: 'https://api.github.com/user',
-        // @ts-expect-error no typings
+        // @ts-expect-error vite SSR issue - need to use .default
         async request({ client, tokens }) {
           const profile = await client.userinfo(tokens.access_token!)
 
