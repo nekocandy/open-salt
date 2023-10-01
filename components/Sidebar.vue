@@ -16,13 +16,13 @@ const PATHS: IPath[] = [
 </script>
 
 <template>
-  <div h-full flex flex-col items-center justify-between px-4 py-4 font-mono>
+  <div h-full flex flex-col items-center justify-between border-r-2 border-yellow-900 px-10 py-4 font-mono>
     <div>
       better OpenSauce
     </div>
 
     <div>
-      <NuxtLink v-for="path in PATHS" :key="path.path" class="hover:underline" cursor-pointer text-lg font-bold uppercase>
+      <NuxtLink v-for="path in PATHS" :key="path.path" :to="path.path" class="hover:underline" cursor-pointer text-lg font-bold uppercase>
         {{ path.name }}
       </NuxtLink>
     </div>
