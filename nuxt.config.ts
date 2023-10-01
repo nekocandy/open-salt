@@ -5,17 +5,17 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: 'opinionated nuxt',
+      title: 'Open Salt',
       meta: [
         {
           name: 'description',
-          content: 'an opinionated nuxt starter template',
+          content: 'Open Salt - The basic condiment for your open source repos',
         },
       ],
       link: [
         {
           rel: 'icon',
-          href: '/oink.svg',
+          href: '/favicon.png',
         },
       ],
     },
