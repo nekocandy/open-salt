@@ -1,20 +1,18 @@
 <script setup lang="ts">
-import BackgroundImage from '~/assets/bg.jpg'
 </script>
 
 <template>
   <div
 
-    :style="{
-      // backgroundImage: `url(${BackgroundImage})`,
-    }"
-
-    h-screen flex flex-col gap-4 bg-yellow-100 bg-cover bg-center bg-no-repeat
-    px-4 py-4
+    h-screen
+    flex gap-4
+    bg-yellow-100
   >
-    <div />
+    <div>
+      <Sidebar />
+    </div>
 
-    <div flex-1>
+    <div flex-1 px-4 py-4>
       <slot />
     </div>
   </div>
